@@ -11,16 +11,17 @@ plugins {
 group 'org.fpm'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 17
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(20)
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/javax.inject/javax.inject
     implementation group: 'javax.inject', name: 'javax.inject', version: '1'
-
-
     testImplementation group: 'junit', name: 'junit', version: '4.12'
 }
